@@ -18,12 +18,13 @@
 		</script>
     </head>
     <body>
+        <input type="button" onClick='location.href="admin/login.jsp"' value="Login as admin"/>
         <center>
             <div>
                 <h1>IICS Borrowing System</h1>
             </div>
             <div>
-                <table id="table" class="display">
+                <table id="table">
                     <thead>
                         <tr>
                             <th>Item</th>
