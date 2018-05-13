@@ -18,6 +18,8 @@
 		</script>
     </head>
     <body>
+        <%@include file='templates/header.html'%>
+        <br/>
         <div>
             <table id="table">
                 <thead>

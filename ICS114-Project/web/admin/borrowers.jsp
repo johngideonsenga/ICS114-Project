@@ -17,6 +17,8 @@
 		</script>
     </head>
     <body>
+        <%@include file='templates/header.html'%>
+        <br/>
         <div>
             <table id="table">
                 <thead>
@@ -36,7 +38,7 @@
                         <td>RM 52</td>
                         <td>2018-05-08</td>
                         <td>07:36 pm</td>
-                        <td><a href=#>Return</a></td>
+                        <td><a href="#">Return</a></td>
                     </tr>
                     <tr>
                         <td>Caringal</td>
@@ -44,7 +46,7 @@
                         <td>RM 52</td>
                         <td>2018-05-08</td>
                         <td>07:36 pm</td>
-                        <td><a href=#>Return</a></td>
+                        <td><a href="#">Return</a></td>
                     </tr>
                 </tbody>
             </table>

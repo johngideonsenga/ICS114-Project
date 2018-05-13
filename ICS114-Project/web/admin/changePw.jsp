@@ -17,7 +17,8 @@
             }
         </script>
     </head>
-    <body>  
+    <body>
+        <%@include file='templates/header.html'%>  
         <center>
             <form action="" method="POST">
                 <h1>Change Password</h1><br>
