@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>IICS Borrowing System | Home</title>
-        <script type="text/javascript" src="jquery/jquery.js"></script>
+        <script type="text/javascript" src="../jquery/jquery.js"></script>
         <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css"/>
         <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
         <script type="text/javascript">
@@ -25,18 +25,21 @@
                         <th>Item</th>
                         <th>Stock</th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Item 1</td>
                         <td>10</td>
-                        <td><a href=#>Borrow</a></td>
+                        <td><a href=#>Edit</a></td>
+                        <td><a href=#>Delete</a></td>
                     </tr>
                     <tr>
                         <td>Item 2</td>
                         <td>10</td>
-                        <td><a href=#>Borrow</a></td>
+                        <td><a href=#>Edit</a></td>
+                        <td><a href=#>Delete</a></td>
                     </tr>
                 </tbody>
             </table>
