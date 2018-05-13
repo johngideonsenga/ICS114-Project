@@ -1,0 +1,12 @@
+CREATE DATABASE borrowing_system;
+
+USE borrowing_system;
+
+
+
+CREATE TABLE administrator(
+username VARCHAR(35) PRIMARY KEY,
+
+password VARCHAR(35) NOT NULL
+
+);
