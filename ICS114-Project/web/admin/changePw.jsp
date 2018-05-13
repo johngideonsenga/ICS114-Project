@@ -1,16 +1,30 @@
 <html>
     <head>
         <title>Change Password</title>
+        <script type="text/javascript">
+            function isMatch(){
+                if (document.getElementById('newPw').value === document.getElementById('confirmPw').value){
+                    document.getElementById('msg').innerHTML = 'Password matched';
+                    document.getElementById('msg').style.color = 'green';
+                    document.getElementById('submit').disabled = false;
+                }else{
+                    document.getElementById('msg').innerHTML = 'Password does not match';
+                    document.getElementById('msg').style.color = 'red';
+                    document.getElementById('submit').disabled = true;
+                }
+            }       
+        </script>
     </head>
     <body>  
         <center>
             <form action="" method="POST">
-                <h1>Change Password</h1>
-                <h3>Current Password: <input type="password" name="currentPw"/></h3><br>
-                <h3>New Password: <input type="password" name="newPw"/></h3><br>
-                <h3>Confirm Password: <input type="password" name="confirmPw"/></h3><br>
-                <input type="submit" name="submit" value="Submit"/>
+                <h1>Change Password</h1><br>
+                <h3>Current Password: <input type="password" name="currentPw" required/></h3>
+                <h3>New Password: <input type="password" onkeyup="isMatch();" name="newPw" id="newPw" required/></h3>
+                <h3>Confirm Password: <input type="password" onkeyup="isMatch();" name="confirmPw" id="confirmPw" required/></h3>
+                <input type="submit" name="submit" value="Submit" id="submit"/>
             </form>
+            <label id="msg"></label>
         </center>
     </body>
 </html>
