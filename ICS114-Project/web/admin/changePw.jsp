@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Change Password</title>
+        <title>IICS Borrowing System | Change Password</title>
     </head>
     <body>  
         <center>
