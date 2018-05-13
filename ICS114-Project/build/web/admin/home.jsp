@@ -11,14 +11,14 @@
         <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
 
         <script type="text/javascript">
-			$(document).ready( function (){
-				$('#table').DataTable({
-					"columnDefs": [
+            $(document).ready( function (){
+                $('#table').DataTable({
+                    "columnDefs": [
                         {"className": "dt-center", "targets": "_all"}
                     ]
-				});
-			});
-		</script>
+                });
+            });
+        </script>
     </head>
     <body>
         <!--Header -->

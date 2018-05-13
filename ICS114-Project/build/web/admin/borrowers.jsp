@@ -6,15 +6,18 @@
         <script type="text/javascript" src="../jquery/jquery.js"></script>
         <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css"/>
         <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+        
         <script type="text/javascript">
-			$(document).ready( function (){
-				$('#table').DataTable({
-					"columnDefs": [
+            $(document).ready( function (){
+                $('#table').DataTable({
+                    "columnDefs": [
                         {"className": "dt-center", "targets": "_all"}
                     ]
-				});
-			});
-		</script>
+                });
+            });
+        </script>
     </head>
     <body>
         <%@include file='templates/header.html'%>

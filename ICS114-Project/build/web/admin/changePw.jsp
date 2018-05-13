@@ -3,6 +3,8 @@
 <html>
     <head>
         <title>IICS Borrowing System | Change Password</title>
+        <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript">
             function isMatch(){
                 if (document.getElementById('newPw').value === document.getElementById('confirmPw').value){
