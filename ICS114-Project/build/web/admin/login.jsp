@@ -9,7 +9,7 @@
     </head>
     <body>
         <center>
-            <form action="loginServlet" method="POST">
+            <form action="../loginServlet" method="POST">
                 <h1>IICS Borrowing System</h1>
                 <h4>Administrator Account</h4>
                 <br><br>

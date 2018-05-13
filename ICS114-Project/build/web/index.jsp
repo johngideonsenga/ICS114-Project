@@ -17,7 +17,7 @@
                     ]
                 });
             });
-		</script>
+        </script>
     </head>
     <body>
         <input type="button" onClick='location.href="admin/login.jsp"' value="Login as admin"/>
