@@ -1,6 +1,8 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Change Password</title>
+        <title>IICS Borrowing System | Change Password</title>
         <script type="text/javascript">
             function isMatch(){
                 if (document.getElementById('newPw').value === document.getElementById('confirmPw').value){
