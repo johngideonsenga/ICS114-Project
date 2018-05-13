@@ -8,10 +8,10 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
             </div>
-            <form method="POST" action="">
+            <form method="POST" action="../addItemServlet">
                 <div class="modal-body">
-                    <br/>Item: <input type="text" required>
-                    <br/>Quantity: <input type="Number" min='1' required>
+                    <br/>Item: <input type="text" name="itemName" required>
+                    <br/>Stock: <input type="number" name="stock" min='1' required>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
