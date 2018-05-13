@@ -1,9 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : May 13, 2018, 5:51:10 PM
-    Author     : Jonjie
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -40,6 +34,11 @@
                     <tbody>
                         <tr>
                             <td>Item 1</td>
+                            <td>10</td>
+                            <td><a href=#>Borrow</a></td>
+                        </tr>
+                        <tr>
+                            <td>Item 2</td>
                             <td>10</td>
                             <td><a href=#>Borrow</a></td>
                         </tr>
