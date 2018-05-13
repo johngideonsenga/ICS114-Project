@@ -6,8 +6,8 @@
         <title>IICS Borrowing System | Login</title>
     </head>
     <body>
-        <form action="" method="POST">
-            <center>
+        <center>
+            <form action="" method="POST">
                 <h1>IICS Borrowing System</h1>
                 <h4>Administrator Account</h4>
                 <br><br>
@@ -16,7 +16,7 @@
                 <label>Password</label><br>
                 <input type="password" name="password"/><br><br>
                 <input type="submit" name="submit" value="Submit"/>
-            </center>
-        </form>
+            </form>
+        </center>
     </body>
 </html>

@@ -18,33 +18,31 @@
 		</script>
     </head>
     <body>
-        <center>
-            <div>
-                <table id="table">
-                    <thead>
-                        <tr>
-                            <th>Item</th>
-                            <th>Stock</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>10</td>
-                            <td><a href=#>Edit</a></td>
-                            <td><a href=#>Delete</a></td>
-                        </tr>
-                        <tr>
-                            <td>Item 2</td>
-                            <td>10</td>
-                            <td><a href=#>Edit</a></td>
-                            <td><a href=#>Delete</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </center>
+        <div>
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Stock</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Item 1</td>
+                        <td>10</td>
+                        <td><a href=#>Edit</a></td>
+                        <td><a href=#>Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>Item 2</td>
+                        <td>10</td>
+                        <td><a href=#>Edit</a></td>
+                        <td><a href=#>Delete</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>

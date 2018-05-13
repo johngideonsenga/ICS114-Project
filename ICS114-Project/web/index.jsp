@@ -23,29 +23,29 @@
             <div>
                 <h1>IICS Borrowing System</h1>
             </div>
-            <div>
-                <table id="table">
-                    <thead>
-                        <tr>
-                            <th>Item</th>
-                            <th>Stock</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Item 1</td>
-                            <td>10</td>
-                            <td><a href=#>Borrow</a></td>
-                        </tr>
-                        <tr>
-                            <td>Item 2</td>
-                            <td>10</td>
-                            <td><a href=#>Borrow</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </center> 
+        </center>
+        <div>
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Stock</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Item 1</td>
+                        <td>10</td>
+                        <td><a href=#>Borrow</a></td>
+                    </tr>
+                    <tr>
+                        <td>Item 2</td>
+                        <td>10</td>
+                        <td><a href=#>Borrow</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>

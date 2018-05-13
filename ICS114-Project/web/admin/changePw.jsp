@@ -14,7 +14,7 @@
                     document.getElementById('msg').style.color = 'red';
                     document.getElementById('submit').disabled = true;
                 }
-            }       
+            }
         </script>
     </head>
     <body>  
