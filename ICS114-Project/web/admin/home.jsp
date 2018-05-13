@@ -19,7 +19,7 @@
     </head>
     <body>
         <center>
-            <table id="table" class="display">
+            <table id="table">
                 <thead>
                     <tr>
                         <th>Item</th>
