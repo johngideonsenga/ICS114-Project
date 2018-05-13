@@ -6,13 +6,17 @@
         <title>IICS Borrowing System | Login</title>
     </head>
     <body>
-        <center>
-            <h1>IICS Borrowing System</h1>
-            <h4>Administrator Account</h4>
-            <br><br>
-            <input type="text" name="username" />
-            <input type="password" name="password"/>
-            <input type="submit" name="submit" value="Submit"/>
-        </center>
+        <form action="" method="POST">
+            <center>
+                <h1>IICS Borrowing System</h1>
+                <h4>Administrator Account</h4>
+                <br><br>
+                <label>Username</label><br>
+                <input type="text" name="username" /><br><br>
+                <label>Password</label><br>
+                <input type="password" name="password"/><br><br>
+                <input type="submit" name="submit" value="Submit"/>
+            </center>
+        </form>
     </body>
 </html>
