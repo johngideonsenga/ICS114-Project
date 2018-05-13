@@ -12,32 +12,17 @@
         <title>Admin</title>
     </head>
     <body>
-<<<<<<< HEAD
-        <center>
-            <h1>IICS Borrowing System</h1>
-            <h4>Administrator Account</h4>
-            <br><br>
-            <input type="text" name="username" />
-            <input type="password" name="password"/>
-            <input type="submit" name="submit" value="Submit"/>
-        </center>
-=======
         <form action="" method="POST">
             <center>
-    <<<<<<< HEAD
                 <h1>IICS Borrowing System</h1>
                 <h4>Administrator Account</h4>
                 <br><br>
-                <input type="text" name="username" />
-                <input type="password" name="password"/>
+                <label>Username</label><br>
+                <input type="text" name="username" /><br><br>
+                <label>Password</label><br>
+                <input type="password" name="password"/><br><br>
                 <input type="submit" name="submit" value="Submit"/>
-    =======
-                <div>
-                    
-                </div>
-    >>>>>>> 21991f2bf33ecfc27c37b1d5d59233a63c68b294
             </center>
         </form>
->>>>>>> 6171b8038d66f7b1f3461c1bccb907d159367a1b
     </body>
 </html>
