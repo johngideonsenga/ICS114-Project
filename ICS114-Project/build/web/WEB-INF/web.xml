@@ -4,9 +4,17 @@
         <servlet-name>addItemServlet</servlet-name>
         <servlet-class>com.logic.servlet.addItemServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>borrowServlet</servlet-name>
+        <servlet-class>com.logic.servlet.borrowServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>addItemServlet</servlet-name>
         <url-pattern>/addItemServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>borrowServlet</servlet-name>
+        <url-pattern>/borrowServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

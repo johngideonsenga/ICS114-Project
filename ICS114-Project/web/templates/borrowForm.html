@@ -8,15 +8,15 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
             </div>
-            <form method="POST" action="">
+            <form method="POST" action="borrowServlet">
                 <div class="modal-body">
-                        <input type="hidden" name="item" value="">
-                        <br/>Student Number: <input type="text" pattern="[0-9]{10,10}" required>
-                        <br/>Last Name: <input type="text" pattern="[A-Za-z ]{1,35}" required>
-                        <br/>First Name: <input type="text" pattern="[A-Za-z ]{1,35}" required>
-                        <br/>Section: <input type="text" required>
-                        <br/>Room: <input type="text" required>
-                        <br/>Subject: <input type="text" required>
+                    <input type="hidden" name="itemID" value="1">
+                    <br/>Student Number: <input type="text" name="studentNum" pattern="[0-9]{10,10}" required>
+                    <br/>Last Name: <input type="text" name="lastName" pattern="[A-Za-z ]{1,35}" required>
+                    <br/>First Name: <input type="text" name="firstName" pattern="[A-Za-z ]{1,35}" required>
+                    <br/>Section: <input type="text" name="section" required>
+                    <br/>Room: <input type="text" name="room" required>
+                    <br/>Subject: <input type="text" name="subject" required>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

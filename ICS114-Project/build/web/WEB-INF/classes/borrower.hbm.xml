@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.logic.service.Borrower" table="borrower">
+    <id column="borrower_ID" name="borrowerID">
+        <generator class="increment"/>
+    </id>
+    <property column="student_num" name="studentNum"/>
+    <property column="last_name" name="lastName"/>
+    <property column="first_name" name="firstName"/>
+    <property column="section" name="section"/>
+    <property column="room" name="room"/>
+    <property column="subject" name="subject"/>
+  </class>
+</hibernate-mapping>

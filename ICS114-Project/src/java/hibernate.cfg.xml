@@ -52,5 +52,6 @@ Contributor(s):
     <property name="hibernate.jdbc.batch_size">100</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
     <mapping resource="item.hbm.xml"/>
+    <mapping resource="borrower.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
