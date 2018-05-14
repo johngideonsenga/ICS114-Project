@@ -51,6 +51,6 @@ Contributor(s):
     <property name="hibernate.use.query_cache">true</property>
     <property name="hibernate.jdbc.batch_size">100</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
-    <mapping resource=""/>
+    <mapping resource="item.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

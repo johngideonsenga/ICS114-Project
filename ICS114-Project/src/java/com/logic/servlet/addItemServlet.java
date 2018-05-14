@@ -12,6 +12,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 
 /**
  *
@@ -34,9 +38,13 @@ public class addItemServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             String itemName = request.getParameter("itemName");
-            String stock = request.getParameter("stock");
+            int stock = Integer.parseInt(request.getParameter("stock"));
             
             Item item = new Item();
+            item.setItemName(itemName);
+            item.setStock(stock);
+
+            out.print(addItem(item));
         }
     }
 
@@ -78,5 +86,27 @@ public class addItemServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
+    
+    boolean addItem(Item item){
+        Configuration config = null;
+        SessionFactory factory = null;
+        Session session = null;
+        Transaction transaction = null;
+        
+        try{
+            config = new Configuration();
+            config.configure();
+            factory = config.buildSessionFactory();
+            session = factory.openSession();
+            transaction = session.beginTransaction();            
+            session.save(item); // insert
+            transaction.commit();
+            session.close();
+        }
+        catch(Exception e){
+            System.out.println("Exception: "+e);
+            return false;
+        }
+        return true;
+    }
 }

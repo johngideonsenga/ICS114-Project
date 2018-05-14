@@ -8,3 +8,8 @@ password VARCHAR(35) NOT NULL
 
 INSERT INTO administrator
 VALUES ('admin','admin');
+
+CREATE TABLE item(
+item_name VARCHAR(50) NOT NULL,
+stock INT NOT NULL
+);
