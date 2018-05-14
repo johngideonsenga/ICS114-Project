@@ -49,7 +49,7 @@
                         <td>ICS114</td>
                         <td>2018/05/08 10:59</td>
                         <td>2018/05/08 11:59</td>
-                        <td><a href="#">Return</a></td>
+                        <td><button type="button" data-toggle="modal" data-target="#returnPrompt">Return</button></td>
                     </tr>
                     <tr>
                         <td>Item 2</td>
@@ -61,7 +61,7 @@
                         <td>ICS114</td>
                         <td>2018/05/08 10:59</td>
                         <td></td>
-                        <td><a href="#">Return</a></td>
+                        <td><button type="button" data-toggle="modal" data-target="#returnPrompt">Return</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -69,5 +69,7 @@
         <div>
             <input type="button" onClick="location.href='#'" value="Generate a PDF List" /> 
         </div>
+        <!--Modals-->
+        <%@include file='templates/returnPrompt.html'%>
     </body>
 </html>
