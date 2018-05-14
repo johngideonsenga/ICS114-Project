@@ -18,6 +18,8 @@ public class Borrower {
     private String section;
     private String room;
     private String subject;
+    private String timeBorrowed;
+    private String timeReturned = "";
 
     public int getBorrowerID() {
         return borrowerID;
@@ -83,9 +85,24 @@ public class Borrower {
         this.subject = subject;
     }
 
+    public String getTimeBorrowed() {
+        return timeBorrowed;
+    }
+
+    public void setTimeBorrowed(String timeBorrowed) {
+        this.timeBorrowed = timeBorrowed;
+    }
+
+    public String getTimeReturned() {
+        return timeReturned;
+    }
+
+    public void setTimeReturned(String timeReturned) {
+        this.timeReturned = timeReturned;
+    }
+
     @Override
     public String toString() {
-        return "Borrower{" + "borrowerID=" + borrowerID + ", itemID=" + itemID + ", studentNum=" + studentNum + ", lastName=" + lastName + ", firstName=" + firstName + ", section=" + section + ", room=" + room + ", subject=" + subject + '}';
+        return "Borrower{" + "borrowerID=" + borrowerID + ", itemID=" + itemID + ", studentNum=" + studentNum + ", lastName=" + lastName + ", firstName=" + firstName + ", section=" + section + ", room=" + room + ", subject=" + subject + ", timeBorrowed=" + timeBorrowed + ", timeReturned=" + timeReturned + '}';
     }
-    
 }

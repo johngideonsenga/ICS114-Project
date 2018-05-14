@@ -26,38 +26,41 @@
             <table id="table">
                 <thead>
                     <tr>
+                        <th>Item</th>
                         <th>Student Number</th>
                         <th>Last Name</th>
                         <th>First Name</th>
                         <th>Section</th>
                         <th>Room</th>
                         <th>Subject</th>
-                        <th>Date</th>
-                        <th>Time</th>
+                        <th>Time Borrowed</th>
+                        <th>Time Returned</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <td>Item 1</td>
                         <td>2015081653</td>
                         <td>Senga</td>
                         <td>John Gideon</td>
                         <td>3ITI</td>
                         <td>RM 52</td>
                         <td>ICS114</td>
-                        <td>2018-05-08</td>
-                        <td>07:36 pm</td>
+                        <td>2018/05/08 10:59</td>
+                        <td>2018/05/08 11:59</td>
                         <td><a href="#">Return</a></td>
                     </tr>
                     <tr>
+                        <td>Item 2</td>
                         <td>2015081653</td>
                         <td>Senga</td>
                         <td>John Gideon</td>
                         <td>3ITI</td>
                         <td>RM 52</td>
                         <td>ICS114</td>
-                        <td>2018-05-08</td>
-                        <td>07:36 pm</td>
+                        <td>2018/05/08 10:59</td>
+                        <td></td>
                         <td><a href="#">Return</a></td>
                     </tr>
                 </tbody>

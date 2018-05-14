@@ -5,11 +5,14 @@
     <id column="borrower_ID" name="borrowerID">
         <generator class="increment"/>
     </id>
+    <property column="item_id" name="itemID"/>
     <property column="student_num" name="studentNum"/>
     <property column="last_name" name="lastName"/>
     <property column="first_name" name="firstName"/>
     <property column="section" name="section"/>
     <property column="room" name="room"/>
     <property column="subject" name="subject"/>
+    <property column="time_Borrowed" name="timeBorrowed"/>
+    <property column="time_returned" name="timeReturned"/>
   </class>
 </hibernate-mapping>

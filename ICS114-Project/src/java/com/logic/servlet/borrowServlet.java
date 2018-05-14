@@ -9,6 +9,8 @@ import com.logic.service.Borrower;
 import com.logic.service.Item;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -37,6 +39,9 @@ public class borrowServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");  
+            Date date = new Date();  
+            
             int itemID = Integer.parseInt(request.getParameter("itemID"));
             String studentNum = request.getParameter("studentNum");
             String lastName = request.getParameter("lastName");
@@ -53,6 +58,7 @@ public class borrowServlet extends HttpServlet {
             borrower.setSection(section);
             borrower.setRoom(room);
             borrower.setSubject(subject);
+            borrower.setTimeBorrowed(formatter.format(date));
             
             if(addBorrower(borrower)){
                 response.sendRedirect("borrowSuccess.html");
