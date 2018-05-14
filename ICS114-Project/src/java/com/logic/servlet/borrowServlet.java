@@ -55,9 +55,8 @@ public class borrowServlet extends HttpServlet {
             borrower.setSubject(subject);
             
             if(addBorrower(borrower)){
-                out.println("success");
+                response.sendRedirect("borrowSuccess.html");
             }
-            
         }
     }
 
