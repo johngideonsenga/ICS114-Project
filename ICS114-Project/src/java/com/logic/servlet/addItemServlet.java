@@ -36,7 +36,7 @@ public class addItemServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+            
             String itemName = request.getParameter("itemName");
             int stock = Integer.parseInt(request.getParameter("stock"));
             
@@ -44,7 +44,9 @@ public class addItemServlet extends HttpServlet {
             item.setItemName(itemName);
             item.setStock(stock);
 
-            out.print(addItem(item));
+            if(addItem(item)){
+                out.println("Success!");
+            }
         }
     }
 

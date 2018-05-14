@@ -3,7 +3,7 @@
 <hibernate-mapping>
   <class name="com.logic.service.Item" table="item">
     <id column="item_ID" name="itemID">
-      <generator class="increment"/>
+        <generator class="increment"/>
     </id>
     <property column="item_name" name="itemName"/>
     <property column="stock" name="stock"/>
