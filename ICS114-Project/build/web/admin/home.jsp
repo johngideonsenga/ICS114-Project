@@ -1,5 +1,11 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.logic.service.Item"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<% 
+    Item item = new Item();
+    ResultSet rs = item.getItems();
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,7 +19,8 @@
             $(document).ready( function (){
                 $('#table').DataTable({
                     "columnDefs": [
-                        {"className": "dt-center", "targets": "_all"}
+                        {"className": "dt-center", "targets": "_all"},
+                        { "orderable": false, "targets": [2,3] }
                     ]
                 });
             });
@@ -42,18 +49,14 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <% while(rs.next()){%>
                     <tr>
-                        <td>Item 1</td>
-                        <td>10</td>
+                        <td><%=rs.getString("item_name")%></td>
+                        <td><%=rs.getInt("stock")%></td>
                         <td><button type="button" data-toggle="modal" data-target="#editForm">Edit Stock</button></td>
                         <td><button type="button" data-toggle="modal" data-target="#deletePrompt">Delete Item</button></td>
                     </tr>
-                    <tr>
-                        <td>Item 2</td>
-                        <td>10</td>
-                        <td><button type="button" data-toggle="modal" data-target="#editForm">Edit Stock</button></td>
-                        <td><button type="button" data-toggle="modal" data-target="#deletePrompt">Delete Item</button></td>
-                    </tr>
+                    <% }%>
                 </tbody>
             </table>
         </div>
