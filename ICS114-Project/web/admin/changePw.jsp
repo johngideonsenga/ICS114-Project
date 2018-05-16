@@ -18,17 +18,33 @@
                 }
             }
         </script>
+        <style>
+            td{
+                width:150px;
+                height:50px;
+            }
+        </style>
     </head>
     <body>
-        <%@include file='templates/header.html'%>  
-        <center>
+        <center><%@include file='templates/header.html'%> </center> 
+        <center><br><br>
             <form action="" method="POST">
-                <h1>Change Password</h1><br>
-                <h3>Current Password: <input type="password" name="currentPw" required/></h3>
-                <h3>New Password: <input type="password" onkeyup="isMatch();" name="newPw" id="newPw" required/></h3>
-                <h3>Confirm Password: <input type="password" onkeyup="isMatch();" name="confirmPw" id="confirmPw" required/></h3>
+                <table>
+                    <tr>
+                        <td>Old Password:</td>
+                        <td><input type="password" name="currentPw" required/></td>
+                    </tr>
+                    <tr>
+                        <td>New Password:</td>
+                        <td><input type="password" onkeyup="isMatch();" name="newPw" id="newPw" required/></td>
+                    </tr>
+                    <tr>
+                        <td>Confirm Password:</td>
+                        <td><input type="password" onkeyup="isMatch();" name="confirmPw" id="confirmPw" required/></td>
+                    </tr>
+                </table><br>
                 <input type="submit" name="submit" value="Submit" id="submit"/>
-            </form>
+            </form><br>
             <label id="msg"></label>
         </center>
     </body>
