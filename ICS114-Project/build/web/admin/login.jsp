@@ -14,6 +14,7 @@
         </style>
     </head>
     <body>
+        <input type="button" onClick='location.href="../index.jsp"' value="Return"/>
         <center>
             <form action="../loginServlet" method="POST">
                 <h1>IICS Borrowing System</h1>
