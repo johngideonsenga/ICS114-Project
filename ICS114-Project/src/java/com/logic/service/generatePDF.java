@@ -13,34 +13,35 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
  * @author Louie Caringal
  */
 public class generatePDF {
-    public void generate() throws DocumentException, FileNotFoundException, SQLException{
-        String filename = "D:\\Project\\sample.pdf";
-            
-        //Create document object
-        Document document = new Document();   
+    public void generate(){
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH-mm");  
+        Date date = new Date(); 
+        
+        String filename = "D:\\Project\\Borrowers - "+formatter.format(date)+".pdf";
         Borrower borrower = new Borrower();
         ResultSet rs = borrower.getBorrowers();
-            //Get pdfwriter instance
+        
+        try{
+            Document document = new Document();   
             PdfWriter.getInstance(document, new FileOutputStream(filename));
-            
-            while(rs.next()){
-                
-            
-            //open document
             document.open();
-            
-            //add content
-            Paragraph paragraph = new Paragraph(rs.getString("borrower_ID")+" | "+rs.getString("student_num")+" | "+rs.getString("last_name")+" | "+rs.getString("first_name")+" | "+rs.getString("section")+" | "+rs.getString("room")+" | "+rs.getString("subject")+" | "+rs.getString("item")+" | "+rs.getString("time_Borrowed")+" | "+rs.getString("time_returned")+" | "+rs.getString("status"));
-            document.add(paragraph);
-            
-            //close document
-        }  
-        document.close();
+
+            while(rs.next()){
+                Paragraph paragraph = new Paragraph(rs.getString("borrower_ID")+" | "+rs.getString("student_num")+" | "+rs.getString("last_name")+" | "+rs.getString("first_name")+" | "+rs.getString("section")+" | "+rs.getString("room")+" | "+rs.getString("subject")+" | "+rs.getString("item")+" | "+rs.getString("time_Borrowed")+" | "+rs.getString("time_returned")+" | "+rs.getString("status"));
+                document.add(paragraph);
+            }
+            document.close();
+        }
+        catch(DocumentException | FileNotFoundException | SQLException e){
+            System.out.println("Exception: "+e);
+        }
     }
 }

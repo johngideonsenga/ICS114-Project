@@ -39,7 +39,7 @@ public class borrowServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");  
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH-mm");
             Date date = new Date();  
             
             String item = request.getParameter("item");
