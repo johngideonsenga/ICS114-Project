@@ -6,6 +6,12 @@
         <title>IICS Borrowing System | Login</title>
         <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
         <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+        <style>
+            td{
+                width:150px;
+                height:50px;
+            }
+        </style>
     </head>
     <body>
         <center>
@@ -13,10 +19,16 @@
                 <h1>IICS Borrowing System</h1>
                 <h4>Administrator Account</h4>
                 <br><br>
-                <label>Username</label><br>
-                <input type="text" name="username" /><br><br>
-                <label>Password</label><br>
-                <input type="password" name="password"/><br><br>
+                <table align="center">
+                    <tr>
+                        <td>Username:</td>
+                         <td><input type="text" name="username" /></td>
+                    </tr>
+                     <tr>
+                        <td>Password:</td>
+                        <td><input type="password" name="password"/></td>
+                    </tr>
+                </table><br>
                 <input type="submit" name="submit" value="Submit"/>
             </form>
         </center>
