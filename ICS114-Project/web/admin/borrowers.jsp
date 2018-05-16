@@ -18,7 +18,8 @@
             $(document).ready( function (){
                 $('#table').DataTable({
                     "columnDefs": [
-                        {"className": "dt-center", "targets": "_all"}
+                        {"className": "dt-center", "targets": "_all"},
+                        { "orderable": false, "targets": 10 }
                     ]
                 });
             });
@@ -57,7 +58,7 @@
                         <td><%=rs.getString("time_borrowed")%></td>
                         <td><%=rs.getString("time_returned")%></td>
                         <td><%=rs.getString("status")%></td>
-                        <td></td>
+                        <td><button type="button" data-toggle="modal" data-target="#returnPrompt">Return</button></td>
                     </tr>
                     <% } %>
                 </tbody>
