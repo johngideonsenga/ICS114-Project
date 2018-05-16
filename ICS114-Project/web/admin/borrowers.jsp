@@ -46,7 +46,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% while(rs.next()){ %>
+                    <% while(rs!=null && rs.next()){ %>
                     <tr>
                         <td><%=rs.getString("item")%></td>
                         <td><%=rs.getString("student_num")%></td>
