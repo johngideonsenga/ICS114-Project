@@ -18,7 +18,7 @@ import java.io.FileOutputStream;
  */
 public class generatePDF {
     public void generate() throws DocumentException, FileNotFoundException{
-        String filename = "D:\\MP\\sample.pdf";
+        String filename = "D:\\Project\\sample.pdf";
             
         //Create document object
         Document document = new Document();        
