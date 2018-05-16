@@ -9,7 +9,6 @@
         <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
         <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
         <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
-
         <script type="text/javascript">
             $(document).ready( function (){
                 $('#table').DataTable({
@@ -18,6 +17,11 @@
                     ]
                 });
             });
+            <% if(request.getParameter("success")!=null){ %>
+                $(window).on('load',function(){
+                    $('#success').modal('show');
+                });
+            <% } %>
         </script>
     </head>
     <body>
@@ -58,5 +62,6 @@
         <%@include file='templates/editForm.html'%>
         <%@include file='templates/deletePrompt.html'%>
         <%@include file='templates/addForm.html'%>
+        <%@include file='templates/addSuccess.html'%>
     </body>
 </html>

@@ -61,7 +61,7 @@ public class borrowServlet extends HttpServlet {
             borrower.setTimeBorrowed(formatter.format(date));
             
             if(addBorrower(borrower)){
-                response.sendRedirect("borrowSuccess.html");
+                response.sendRedirect("index.jsp?success=1");
             }
         }
     }

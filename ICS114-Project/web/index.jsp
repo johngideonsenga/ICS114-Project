@@ -17,6 +17,11 @@
                     ]
                 });
             });
+            <% if(request.getParameter("success")!=null){ %>
+                $(window).on('load',function(){
+                    $('#success').modal('show');
+                });
+            <% } %>
         </script>
     </head>
     <body>
@@ -53,9 +58,8 @@
                 </tbody>
             </table>
         </div>
-
         <!--Modal-->
         <%@include file='templates/borrowForm.html'%>
-        
+        <%@include file='templates/borrowSuccess.html'%>
     </body>
 </html>
