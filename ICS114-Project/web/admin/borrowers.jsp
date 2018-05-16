@@ -1,5 +1,11 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.logic.service.Borrower"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<% 
+    Borrower borrower = new Borrower();
+    ResultSet rs = borrower.getBorrowers();
+%>
 <html>
     <head>
         <title> IICS Borrowing System | Borrowers List</title>
@@ -8,7 +14,6 @@
         <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
         <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
         <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
-        
         <script type="text/javascript">
             $(document).ready( function (){
                 $('#table').DataTable({
@@ -35,34 +40,26 @@
                         <th>Subject</th>
                         <th>Time Borrowed</th>
                         <th>Time Returned</th>
+                        <th>Subject</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
+                    <% while(rs.next()){ %>
                     <tr>
-                        <td>Item 1</td>
-                        <td>2015081653</td>
-                        <td>Senga</td>
-                        <td>John Gideon</td>
-                        <td>3ITI</td>
-                        <td>RM 52</td>
-                        <td>ICS114</td>
-                        <td>2018/05/08 10:59</td>
-                        <td>2018/05/08 11:59</td>
-                        <td><button type="button" data-toggle="modal" data-target="#returnPrompt">Return</button></td>
-                    </tr>
-                    <tr>
-                        <td>Item 2</td>
-                        <td>2015081653</td>
-                        <td>Senga</td>
-                        <td>John Gideon</td>
-                        <td>3ITI</td>
-                        <td>RM 52</td>
-                        <td>ICS114</td>
-                        <td>2018/05/08 10:59</td>
+                        <td><%=rs.getString("item")%></td>
+                        <td><%=rs.getString("student_num")%></td>
+                        <td><%=rs.getString("last_name")%></td>
+                        <td><%=rs.getString("first_name")%></td>
+                        <td><%=rs.getString("section")%></td>
+                        <td><%=rs.getString("room")%></td>
+                        <td><%=rs.getString("subject")%></td>
+                        <td><%=rs.getString("time_borrowed")%></td>
+                        <td><%=rs.getString("time_returned")%></td>
+                        <td><%=rs.getString("status")%></td>
                         <td></td>
-                        <td><button type="button" data-toggle="modal" data-target="#returnPrompt">Return</button></td>
                     </tr>
+                    <% } %>
                 </tbody>
             </table>
         </div>

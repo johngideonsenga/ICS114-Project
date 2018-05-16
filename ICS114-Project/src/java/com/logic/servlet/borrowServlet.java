@@ -42,7 +42,7 @@ public class borrowServlet extends HttpServlet {
             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");  
             Date date = new Date();  
             
-            int itemID = Integer.parseInt(request.getParameter("itemID"));
+            String item = request.getParameter("item");
             String studentNum = request.getParameter("studentNum");
             String lastName = request.getParameter("lastName");
             String firstName = request.getParameter("firstName");
@@ -51,7 +51,7 @@ public class borrowServlet extends HttpServlet {
             String subject = request.getParameter("subject");
             
             Borrower borrower = new Borrower();
-            borrower.setItemID(itemID);
+            borrower.setItem(item);
             borrower.setStudentNum(studentNum);
             borrower.setLastName(lastName);
             borrower.setFirstName(firstName);
@@ -59,7 +59,7 @@ public class borrowServlet extends HttpServlet {
             borrower.setRoom(room);
             borrower.setSubject(subject);
             borrower.setTimeBorrowed(formatter.format(date));
-            
+
             if(addBorrower(borrower)){
                 response.sendRedirect("index.jsp?success=1");
             }

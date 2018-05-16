@@ -5,13 +5,19 @@
  */
 package com.logic.service;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 /**
  *
  * @author Jonjie
  */
 public class Borrower {
     private int borrowerID;
-    private int itemID;
+    private String item;
     private String studentNum;
     private String lastName;
     private String firstName;
@@ -20,6 +26,7 @@ public class Borrower {
     private String subject;
     private String timeBorrowed;
     private String timeReturned = "";
+    private String status = "borrowed";
 
     public int getBorrowerID() {
         return borrowerID;
@@ -29,12 +36,12 @@ public class Borrower {
         this.borrowerID = borrowerID;
     }
 
-    public int getItemID() {
-        return itemID;
+    public String getItem() {
+        return item;
     }
 
-    public void setItemID(int itemID) {
-        this.itemID = itemID;
+    public void setItem(String item) {
+        this.item = item;
     }
 
     public String getStudentNum() {
@@ -101,8 +108,34 @@ public class Borrower {
         this.timeReturned = timeReturned;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public ResultSet getBorrowers(){
+        String url = "jdbc:mysql://localhost:3306/borrowing_system";
+        String username = "root";
+        String password = "root";
+        ResultSet rs = null;
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(url,username,password);
+            Statement st = conn.createStatement();
+            rs = st.executeQuery("SELECT * FROM borrower");
+        }
+        catch(ClassNotFoundException | SQLException e){
+            System.out.print("exception: "+e);
+        }
+        return rs;
+    }
+
     @Override
     public String toString() {
-        return "Borrower{" + "borrowerID=" + borrowerID + ", itemID=" + itemID + ", studentNum=" + studentNum + ", lastName=" + lastName + ", firstName=" + firstName + ", section=" + section + ", room=" + room + ", subject=" + subject + ", timeBorrowed=" + timeBorrowed + ", timeReturned=" + timeReturned + '}';
+        return "Borrower{" + "borrowerID=" + borrowerID + ", item=" + item + ", studentNum=" + studentNum + ", lastName=" + lastName + ", firstName=" + firstName + ", section=" + section + ", room=" + room + ", subject=" + subject + ", timeBorrowed=" + timeBorrowed + ", timeReturned=" + timeReturned + ", status=" + status + '}';
     }
+
 }

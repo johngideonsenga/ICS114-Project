@@ -58,7 +58,7 @@
                 </tbody>
             </table>
         </div>
-        <!--Modal-->
+        <!--Modals-->
         <%@include file='templates/borrowForm.html'%>
         <%@include file='templates/borrowSuccess.html'%>
     </body>
