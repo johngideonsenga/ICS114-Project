@@ -26,7 +26,7 @@
         </style>
     </head>
     <body>
-        <center><%@include file='templates/header.html'%> </center> 
+        <center><%@include file='templates/header.html'%></center> 
         <center><br><br>
             <form action="" method="POST">
                 <table>

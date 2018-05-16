@@ -23,10 +23,16 @@
                     ]
                 });
             });
+            
+            <% if(request.getParameter("success")!=null){ %>
+                $(window).on('load',function(){
+                    $('#success').modal('show');
+                });
+            <% } %>
         </script>
     </head>
     <body>
-        <%@include file='templates/header.html'%>
+        <center><%@include file='templates/header.html'%></center>
         <br/>
         <div>
             <table id="table">
@@ -71,5 +77,6 @@
         </div>
         <!--Modals-->
         <%@include file='templates/returnPrompt.html'%>
+        <%@include file='templates/generateSuccess.html'%>
     </body>
 </html>

@@ -33,7 +33,7 @@
     </head>
     <body>
         <!--Header -->
-        <%@include file='templates/header.html'%>
+        <center><%@include file='templates/header.html'%></center>
         <br/>
         <div>
             <center>
