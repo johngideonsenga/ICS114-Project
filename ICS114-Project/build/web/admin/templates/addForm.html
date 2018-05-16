@@ -10,8 +10,16 @@
             </div>
             <form method="POST" action="../addItemServlet">
                 <div class="modal-body">
-                    <br/>Item: <input type="text" name="itemName" required>
-                    <br/>Stock: <input type="number" name="stock" min='1' required>
+                    <table>
+                        <tr>
+                            <td>Item:</td>
+                            <td><input type="text" name="itemName" required></td>
+                        </tr>
+                        <tr>
+                            <td>Stock:</td>
+                            <td><input type="number" name="stock" min='1' required></td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

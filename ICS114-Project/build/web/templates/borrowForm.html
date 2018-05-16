@@ -11,12 +11,32 @@
             <form method="POST" action="borrowServlet">
                 <div class="modal-body">
                     <input type="hidden" name="itemID" value="1">
-                    <br/>Student Number: <input type="text" name="studentNum" pattern="[0-9]{10,10}" required>
-                    <br/>Last Name: <input type="text" name="lastName" pattern="[A-Za-z ]{1,35}" required>
-                    <br/>First Name: <input type="text" name="firstName" pattern="[A-Za-z ]{1,35}" required>
-                    <br/>Section: <input type="text" name="section" required>
-                    <br/>Room: <input type="text" name="room" required>
-                    <br/>Subject: <input type="text" name="subject" required>
+                    <table>
+                        <tr>
+                            <td>Student Number:</td>
+                            <td><input type="text" name="studentNum" pattern="[0-9]{10,10}" required></td>
+                        </tr>
+                        <tr>
+                            <td>Last Name:</td>
+                            <td><input type="text" name="lastName" pattern="[A-Za-z ]{1,35}" required></td>
+                        </tr>
+                        <tr>
+                            <td>First Name:</td>
+                            <td><input type="text" name="firstName" pattern="[A-Za-z ]{1,35}" required></td>
+                        </tr>
+                        <tr>
+                            <td>Section:</td>
+                            <td><input type="text" name="section" required></td>
+                        </tr>
+                        <tr>
+                            <td>Room:</td>
+                            <td><input type="text" name="room" required></td>
+                        </tr>
+                        <tr>
+                            <td>Subject:</td>
+                            <td><input type="text" name="subject" required></td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
