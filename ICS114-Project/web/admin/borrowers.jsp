@@ -65,9 +65,13 @@
             </table>
         </div>
         <div>
+<<<<<<< HEAD
             <form action="../generatePDFServlet" method="POST">
                 <input type="submit" value="Generate a PDF List" />
             </form>
+=======
+            <form action="../generatePDFServlet" method="POST"><input type="submit" value="Generate a PDF List" /></form>
+>>>>>>> ab23630eb97ab67095ccecf5734eeb8dc5327fc7
         </div>
         <!--Modals-->
         <%@include file='templates/returnPrompt.html'%>

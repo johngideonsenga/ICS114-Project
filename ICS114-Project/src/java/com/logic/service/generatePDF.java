@@ -11,8 +11,6 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -20,7 +18,7 @@ import java.util.logging.Logger;
  */
 public class generatePDF {
     public void generate() throws DocumentException, FileNotFoundException{
-        String filename = "ics114-project.pdf";
+        String filename = "D:\\MP\\sample.pdf";
             
         //Create document object
         Document document = new Document();        
@@ -32,12 +30,11 @@ public class generatePDF {
             document.open();
             
             //add content
-            Paragraph paragraph = new Paragraph("Hello World!");
+            Paragraph paragraph = new Paragraph("Pink or Brown?");
             document.add(paragraph);
             
             //close document
             document.close();
             
-            System.out.println("Success");
     }
 }
