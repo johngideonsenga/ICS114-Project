@@ -65,7 +65,7 @@
             </table>
         </div>
         <div>
-            <input type="button" onClick="location.href='#'" value="Generate a PDF List" /> 
+            <input type="button" onClick="location.href='generatePDFServlet'" value="Generate a PDF List" /> 
         </div>
         <!--Modals-->
         <%@include file='templates/returnPrompt.html'%>
