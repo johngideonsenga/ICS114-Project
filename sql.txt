@@ -1,2 +1,12 @@
 CREATE DATABASE borrowing_system;
 USE borrowing_system;
+
+DROP TABLE borrower;
+
+DROP TABLE item;
+
+
+
+SELECT * FROM borrower;
+
+SELECT * FROM item;

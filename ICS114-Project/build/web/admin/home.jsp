@@ -70,10 +70,10 @@
         </div>
 
         <!--Modals-->
-        <%@include file='templates/editForm.html'%>
-        <%@include file='templates/deletePrompt.html'%>
-        <%@include file='templates/addForm.html'%>
-        <%@include file='templates/addSuccess.html'%>
-        <%@include file='templates/addFailed.html'%>
+        <%@include file='modals/editForm.html'%>
+        <%@include file='modals/deletePrompt.html'%>
+        <%@include file='modals/addForm.html'%>
+        <%@include file='modals/addSuccess.html'%>
+        <%@include file='modals/addFailed.html'%>
     </body>
 </html>

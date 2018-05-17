@@ -64,7 +64,7 @@
             </table>
         </div>
         <!--Modals-->
-        <%@include file='templates/borrowForm.html'%>
-        <%@include file='templates/borrowSuccess.html'%>
+        <%@include file='modals/borrowForm.html'%>
+        <%@include file='modals/borrowSuccess.html'%>
     </body>
 </html>
