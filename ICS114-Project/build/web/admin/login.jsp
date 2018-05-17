@@ -8,7 +8,7 @@
         <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <input type="button" onClick='location.href="../index.jsp"' value="Return"/>
+        <input type="button" onClick='location.href="../index.jsp"' value="Home"/>
         <center>
             <form action="../loginServlet" method="POST">
                 <h1>IICS Borrowing System</h1>
