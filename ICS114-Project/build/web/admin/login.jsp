@@ -6,12 +6,6 @@
         <title>IICS Borrowing System | Login</title>
         <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
         <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
-        <style>
-            td{
-                width:150px;
-                height:50px;
-            }
-        </style>
     </head>
     <body>
         <input type="button" onClick='location.href="../index.jsp"' value="Return"/>

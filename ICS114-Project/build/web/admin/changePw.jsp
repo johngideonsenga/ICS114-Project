@@ -18,12 +18,6 @@
                 }
             }
         </script>
-        <style>
-            td{
-                width:150px;
-                height:50px;
-            }
-        </style>
     </head>
     <body>
         <center><%@include file='templates/header.html'%></center> 
