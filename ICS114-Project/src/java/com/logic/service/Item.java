@@ -6,11 +6,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
-
 public class Item {
+    private int itemID;
     private String itemName;
     private int stock;
+
+    public int getItemID() {
+        return itemID;
+    }
+
+    public void setItemID(int itemID) {
+        this.itemID = itemID;
+    }
 
     public String getItemName() {
         return itemName;
@@ -47,7 +54,7 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item{" + "itemName=" + itemName + ", stock=" + stock + '}';
+        return "Item{" + "itemID=" + itemID + ", itemName=" + itemName + ", stock=" + stock + '}';
     }
     
 }
