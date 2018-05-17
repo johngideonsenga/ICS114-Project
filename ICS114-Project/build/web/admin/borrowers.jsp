@@ -32,7 +32,7 @@
         </script>
     </head>
     <body>
-        <center><%@include file='templates/header.html'%></center>
+        <%@include file='templates/header.html'%>
         <br/>
         <div>
             <table id="table">

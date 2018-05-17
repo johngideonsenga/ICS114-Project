@@ -41,7 +41,7 @@
     </head>
     <body>
         <!--Header -->
-        <center><%@include file='templates/header.html'%></center>
+        <%@include file='templates/header.html'%>
         <br/>
         <div>
             <center>

@@ -20,7 +20,7 @@
         </script>
     </head>
     <body>
-        <center><%@include file='templates/header.html'%></center> 
+        <%@include file='templates/header.html'%>
         <center><br><br>
             <form action="" method="POST">
                 <table>
@@ -39,7 +39,7 @@
                 </table><br>
                 <input type="submit" name="submit" value="Submit" id="submit"/>
             </form><br>
-            <label id="msg"></label>
+            <p id="msg"></p>
         </center>
     </body>
 </html>
