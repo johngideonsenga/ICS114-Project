@@ -76,7 +76,7 @@
             </form>
         </div>
         <!--Modals-->
-        <%@include file='templates/returnPrompt.html'%>
-        <%@include file='templates/generateSuccess.html'%>
+        <%@include file='modals/returnPrompt.html'%>
+        <%@include file='modals/generateSuccess.html'%>
     </body>
 </html>
