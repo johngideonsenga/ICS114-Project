@@ -21,7 +21,7 @@ import java.util.Date;
  * @author Louie Caringal
  */
 public class generatePDF {
-    public void generate(){
+    public boolean generate(){
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH-mm");  
         Date date = new Date(); 
         
@@ -35,13 +35,15 @@ public class generatePDF {
             document.open();
 
             while(rs.next()){
-                Paragraph paragraph = new Paragraph(rs.getString("borrower_ID")+" | "+rs.getString("student_num")+" | "+rs.getString("last_name")+" | "+rs.getString("first_name")+" | "+rs.getString("section")+" | "+rs.getString("room")+" | "+rs.getString("subject")+" | "+rs.getString("item")+" | "+rs.getString("time_Borrowed")+" | "+rs.getString("time_returned")+" | "+rs.getString("status"));
+                Paragraph paragraph = new Paragraph(rs.getString("student_num")+" - "+rs.getString("last_name")+", "+rs.getString("first_name")+" - "+rs.getString("section")+" - "+rs.getString("room")+" - "+rs.getString("subject")+" - "+rs.getString("item")+" - "+rs.getString("time_Borrowed"));
                 document.add(paragraph);
             }
             document.close();
         }
         catch(DocumentException | FileNotFoundException | SQLException e){
             System.out.println("Exception: "+e);
+            return false;
         }
+        return true;
     }
 }

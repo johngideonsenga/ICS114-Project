@@ -24,11 +24,19 @@
                     ]
                 });
             });
+            
             <% if(request.getParameter("success")!=null){ %>
                 $(window).on('load',function(){
                     $('#success').modal('show');
                 });
             <% } %>
+                
+            <% if(request.getParameter("failed")!=null){ %>
+                $(window).on('load',function(){
+                    $('#failed').modal('show');
+                });
+            <% } %>    
+                
         </script>
     </head>
     <body>
@@ -66,5 +74,6 @@
         <%@include file='templates/deletePrompt.html'%>
         <%@include file='templates/addForm.html'%>
         <%@include file='templates/addSuccess.html'%>
+        <%@include file='templates/addFailed.html'%>
     </body>
 </html>

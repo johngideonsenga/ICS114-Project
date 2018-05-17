@@ -2,10 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
   <class name="com.logic.service.Item" table="item">
-    <id column="item_ID" name="itemID">
-        <generator class="increment"/>
-    </id>
-    <property column="item_name" name="itemName"/>
+    <id column="item_name" name="itemName"/>
     <property column="stock" name="stock"/>
   </class>
 </hibernate-mapping>

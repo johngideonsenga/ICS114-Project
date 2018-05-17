@@ -37,8 +37,9 @@ public class generatePDFServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             generatePDF gen = new generatePDF();
-            gen.generate();
-            response.sendRedirect("admin/borrowers.jsp?success=1");
+            if(gen.generate()){
+                response.sendRedirect("admin/borrowers.jsp?success=1");
+            }
         }
     }
 

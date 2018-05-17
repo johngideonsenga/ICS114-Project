@@ -46,6 +46,8 @@ public class addItemServlet extends HttpServlet {
 
             if(addItem(item)){
                 response.sendRedirect("admin/home.jsp?success=1");
+            }else{
+                response.sendRedirect("admin/home.jsp?failed=1");
             }
         }
     }
