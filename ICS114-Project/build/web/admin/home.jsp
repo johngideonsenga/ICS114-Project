@@ -25,6 +25,10 @@
                 });
             });
             
+            function setDelete(item){
+                document.getElementById("delete").value = item;
+            }
+            
             <% if(request.getParameter("success")!=null){ %>
                 $(window).on('load',function(){
                     $('#success').modal('show');
@@ -62,7 +66,7 @@
                         <td><%=rs.getString("item_name")%></td>
                         <td><%=rs.getInt("stock")%></td>
                         <td><button type="button" data-toggle="modal" data-target="#editForm">Edit Stock</button></td>
-                        <td><button type="button" data-toggle="modal" data-target="#deletePrompt">Delete Item</button></td>
+                        <td><button type="button" onClick="setDelete('<%=rs.getString("item_ID")%>')" data-toggle="modal" data-target="#deletePrompt">Delete Item</button></td>
                     </tr>
                     <% }%>
                 </tbody>

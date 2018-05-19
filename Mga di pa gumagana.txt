@@ -5,3 +5,5 @@ Return
 Change Password
 Login
 Borrow *(update ng stock at status ng borrower)
+
+sql injection and XSS

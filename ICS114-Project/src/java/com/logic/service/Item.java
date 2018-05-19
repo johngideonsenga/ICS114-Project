@@ -2,11 +2,17 @@ package com.logic.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Item {
+    
+    private String url = "jdbc:mysql://localhost:3306/borrowing_system";
+    private String username = "root";
+    private String password = "root";
+    
     private int itemID;
     private String itemName;
     private int stock;
@@ -36,9 +42,6 @@ public class Item {
     }
     
     public ResultSet getItems(){
-        String url = "jdbc:mysql://localhost:3306/borrowing_system";
-        String username = "root";
-        String password = "root";
         ResultSet rs = null;
         try{
             Class.forName("com.mysql.jdbc.Driver");
@@ -50,6 +53,21 @@ public class Item {
             System.out.print("exception: "+e);
         }
         return rs;
+    }
+    
+    public boolean deleteItem(int itemID){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(url,username,password);
+            PreparedStatement pst = conn.prepareStatement("DELETE FROM item WHERE item_ID = ?");
+            pst.setInt(1,itemID);
+            pst.executeUpdate();
+        }
+        catch(ClassNotFoundException | SQLException e){
+            System.out.print("exception: "+e);
+            return false;
+        }
+        return true;
     }
 
     @Override
