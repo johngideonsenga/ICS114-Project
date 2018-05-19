@@ -9,17 +9,16 @@
         <servlet-class>com.logic.servlet.borrowServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>deleteServlet</servlet-name>
+        <servlet-class>com.logic.servlet.deleteServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>generatePDFServlet</servlet-name>
         <servlet-class>com.logic.servlet.generatePDFServlet</servlet-class>
     </servlet>
     <servlet>
-<<<<<<< HEAD
-        <servlet-name>deleteServlet</servlet-name>
-        <servlet-class>com.logic.servlet.deleteServlet</servlet-class>
-=======
         <servlet-name>loginServlet</servlet-name>
         <servlet-class>com.logic.servlet.loginServlet</servlet-class>
->>>>>>> 395f5c7acd937560047eff71dd352292db18b907
     </servlet>
     <servlet-mapping>
         <servlet-name>addItemServlet</servlet-name>
@@ -30,21 +29,23 @@
         <url-pattern>/borrowServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>deleteServlet</servlet-name>
+        <url-pattern>/deleteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>generatePDFServlet</servlet-name>
         <url-pattern>/generatePDFServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-<<<<<<< HEAD
-        <servlet-name>deleteServlet</servlet-name>
-        <url-pattern>/deleteServlet</url-pattern>
-=======
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/loginServlet</url-pattern>
->>>>>>> 395f5c7acd937560047eff71dd352292db18b907
     </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
 </web-app>
