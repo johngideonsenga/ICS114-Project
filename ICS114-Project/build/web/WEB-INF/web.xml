@@ -13,8 +13,13 @@
         <servlet-class>com.logic.servlet.generatePDFServlet</servlet-class>
     </servlet>
     <servlet>
+<<<<<<< HEAD
         <servlet-name>deleteServlet</servlet-name>
         <servlet-class>com.logic.servlet.deleteServlet</servlet-class>
+=======
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>com.logic.servlet.loginServlet</servlet-class>
+>>>>>>> 395f5c7acd937560047eff71dd352292db18b907
     </servlet>
     <servlet-mapping>
         <servlet-name>addItemServlet</servlet-name>
@@ -29,8 +34,13 @@
         <url-pattern>/generatePDFServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+<<<<<<< HEAD
         <servlet-name>deleteServlet</servlet-name>
         <url-pattern>/deleteServlet</url-pattern>
+=======
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
+>>>>>>> 395f5c7acd937560047eff71dd352292db18b907
     </servlet-mapping>
     <session-config>
         <session-timeout>
