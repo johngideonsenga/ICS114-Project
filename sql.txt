@@ -10,3 +10,17 @@ DROP TABLE item;
 SELECT * FROM borrower;
 
 SELECT * FROM item;
+
+
+CREATE TABLE administrator(
+
+username VARCHAR(35) PRIMARY KEY,
+
+password VARCHAR(35) NOT NULL
+
+);
+
+
+
+INSERT INTO administrator 
+VALUES('admin','admin');
