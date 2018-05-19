@@ -43,6 +43,8 @@ public class loginServlet extends HttpServlet {
             
             if(conn.Connection(username, password)){
                 response.sendRedirect("admin/home.jsp");
+            }else{
+                response.sendRedirect("admin/login.jsp?failed=1");
             }
         }
     }

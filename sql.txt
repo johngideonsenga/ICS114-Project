@@ -2,25 +2,17 @@ CREATE DATABASE borrowing_system;
 USE borrowing_system;
 
 DROP TABLE borrower;
-
 DROP TABLE item;
-
-
+DROP TABLE administrator;
 
 SELECT * FROM borrower;
-
 SELECT * FROM item;
-
+SELECT * FROM administrator;
 
 CREATE TABLE administrator(
-
 username VARCHAR(35) PRIMARY KEY,
-
 password VARCHAR(35) NOT NULL
-
 );
-
-
 
 INSERT INTO administrator 
 VALUES('admin','admin');
