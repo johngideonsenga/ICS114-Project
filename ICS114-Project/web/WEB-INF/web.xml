@@ -12,6 +12,10 @@
         <servlet-name>generatePDFServlet</servlet-name>
         <servlet-class>com.logic.servlet.generatePDFServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>com.logic.servlet.loginServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>addItemServlet</servlet-name>
         <url-pattern>/addItemServlet</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>generatePDFServlet</servlet-name>
         <url-pattern>/generatePDFServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
