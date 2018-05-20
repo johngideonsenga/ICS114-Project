@@ -15,6 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.lang.StringEscapeUtils;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -43,13 +44,13 @@ public class borrowServlet extends HttpServlet {
             Date date = new Date();  
             
             int itemID = Integer.parseInt(request.getParameter("itemID"));
-            String itemName = request.getParameter("itemName");
-            String studentNum = request.getParameter("studentNum");
-            String lastName = request.getParameter("lastName");
-            String firstName = request.getParameter("firstName");
-            String section = request.getParameter("section");
-            String room = request.getParameter("room");
-            String subject = request.getParameter("subject");
+            String itemName = StringEscapeUtils.escapeHtml(request.getParameter("itemName"));
+            String studentNum = StringEscapeUtils.escapeHtml(request.getParameter("studentNum"));
+            String lastName = StringEscapeUtils.escapeHtml(request.getParameter("lastName"));
+            String firstName = StringEscapeUtils.escapeHtml(request.getParameter("firstName"));
+            String section = StringEscapeUtils.escapeHtml(request.getParameter("section"));
+            String room = StringEscapeUtils.escapeHtml(request.getParameter("room"));
+            String subject = StringEscapeUtils.escapeHtml(request.getParameter("subject"));
             
             Borrower borrower = new Borrower();
             borrower.setItemID(itemID);

@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.lang.StringEscapeUtils;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -37,7 +38,7 @@ public class addItemServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-            String itemName = request.getParameter("itemName");
+            String itemName = StringEscapeUtils.escapeHtml(request.getParameter("itemName"));
             int stock = Integer.parseInt(request.getParameter("stock"));
             
             Item item = new Item();

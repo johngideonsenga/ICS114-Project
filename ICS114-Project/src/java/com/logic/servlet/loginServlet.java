@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.apache.commons.lang.StringEscapeUtils;
 
 /**
  *
@@ -37,8 +38,8 @@ public class loginServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
+            String username = StringEscapeUtils.escapeHtml(request.getParameter("username"));
+            String password = StringEscapeUtils.escapeHtml(request.getParameter("password"));
             
             Connection conn = new Connection();
             

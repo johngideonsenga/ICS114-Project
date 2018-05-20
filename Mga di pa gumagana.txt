@@ -1,5 +1,3 @@
 Mga Di pa gumagana:
 
 Change Password
-
-sql injection and XSS
