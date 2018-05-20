@@ -58,10 +58,14 @@
                     <tr>
                         <td><%=rs.getString("item_name")%></td>
                         <td><%=rs.getInt("stock")%></td>
+                        <% if(rs.getInt("stock")>0){ %>
                         <td><button type="button" 
                             onClick="setItem('<%=rs.getString("item_ID")%>','<%=rs.getString("item_name")%>')"
                             data-toggle="modal" data-target="#borrowForm">Borrow</button>
                         </td>
+                        <% }else{ %>
+                        <td></td>
+                        <% } %>
                     </tr>
                     <% }%>
                 </tbody>
@@ -70,6 +74,5 @@
         <!--Modals-->
         <%@include file='modals/borrowForm.html'%>
         <%@include file='modals/borrowSuccess.html'%>
-        <%@include file='modals/borrowFailed.html'%>
     </body>
 </html>
