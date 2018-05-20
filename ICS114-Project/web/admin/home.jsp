@@ -25,8 +25,13 @@
                 });
             });
             
-            function setDelete(item){
-                document.getElementById("delete").value = item;
+            function setDelete(itemID){
+                document.getElementById("delete").value = itemID;
+            }
+            function setEdit(itemID, itemName, stock){
+                document.getElementById("edit").value = itemID;
+                document.getElementById("itemName").value = itemName;
+                document.getElementById("stock").value = stock;
             }
             
             <% if(request.getParameter("success")!=null){ %>
@@ -40,7 +45,12 @@
                     $('#failed').modal('show');
                 });
             <% } %>    
-                
+            
+            <% if(request.getParameter("editSuccess")!=null){ %>
+                $(window).on('load',function(){
+                    $('#editSuccess').modal('show');
+                });
+            <% } %>  
         </script>
     </head>
     <body>
@@ -65,7 +75,9 @@
                     <tr>
                         <td><%=rs.getString("item_name")%></td>
                         <td><%=rs.getInt("stock")%></td>
-                        <td><button type="button" data-toggle="modal" data-target="#editForm">Edit Stock</button></td>
+                        <td><button type="button" 
+                                    onClick="setEdit('<%=rs.getString("item_ID")%>','<%=rs.getString("item_name")%>','<%=rs.getString("stock")%>')" 
+                                    data-toggle="modal" data-target="#editForm">Edit Stock</button></td>
                         <td><button type="button" onClick="setDelete('<%=rs.getString("item_ID")%>')" data-toggle="modal" data-target="#deletePrompt">Delete Item</button></td>
                     </tr>
                     <% }%>
@@ -79,5 +91,6 @@
         <%@include file='modals/addForm.html'%>
         <%@include file='modals/addSuccess.html'%>
         <%@include file='modals/addFailed.html'%>
+        <%@include file='modals/editSuccess.html'%>
     </body>
 </html>

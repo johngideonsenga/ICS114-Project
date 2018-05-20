@@ -24,9 +24,9 @@
                 });
             });
             
-            function setReturn(borrowerID,itemName){
+            function setReturn(borrowerID,itemID){
                 document.getElementById("borrowerID").value = borrowerID;
-                document.getElementById("itemName").value = itemName;
+                document.getElementById("itemID").value = itemID;
             }
             
             <% if(request.getParameter("success")!=null){ %>
@@ -71,7 +71,7 @@
                         <td><%=rs.getString("status")%></td>
                         <% if(rs.getString("status").equals("Borrowed")){ %>
                         <td><button type="button" 
-                                onclick="setReturn('<%=rs.getString("borrower_ID")%>','<%=rs.getString("item_name")%>')" 
+                                onclick="setReturn('<%=rs.getString("borrower_ID")%>','<%=rs.getString("item_ID")%>')" 
                                 data-toggle="modal" data-target="#returnPrompt">Return</button>
                         </td>
                         <% }else{ %>

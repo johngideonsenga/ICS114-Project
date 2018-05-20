@@ -8,16 +8,17 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
             </div>
-            <form method="POST" action="">
+            <form method="POST" action="../editItemServlet">
+                <input type='hidden' id='edit' name='itemID' value=""/>
                 <div class="modal-body">
                     <table>
                         <tr>
                             <td>Item:</td>
-                            <td><input type="text" name="itemName" required></td>
+                            <td><input type="text" id='itemName' disabled required></td>
                         </tr>
                         <tr>
                             <td>Stock:</td>
-                            <td><input type="number" name="stock" min='1' required></td>
+                            <td><input type="number" id='stock' name="stock" min='1' value="" required></td>
                         </tr>
                     </table>
                 </div>

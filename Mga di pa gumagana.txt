@@ -1,5 +1,5 @@
 Mga Di pa gumagana:
-Edit Stock
+
 Change Password
 
 sql injection and XSS

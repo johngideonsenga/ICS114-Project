@@ -24,6 +24,10 @@
         <servlet-name>returnItemServlet</servlet-name>
         <servlet-class>com.logic.servlet.returnItemServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>editItemServlet</servlet-name>
+        <servlet-class>com.logic.servlet.editItemServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>addItemServlet</servlet-name>
         <url-pattern>/addItemServlet</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>returnItemServlet</servlet-name>
         <url-pattern>/returnItemServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>editItemServlet</servlet-name>
+        <url-pattern>/editItemServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

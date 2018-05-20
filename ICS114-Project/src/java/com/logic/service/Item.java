@@ -87,12 +87,30 @@ public class Item {
         return true;
     }
     
-    public boolean incrementStock(String itemName){
+    public boolean incrementStock(int itemID){
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url,username,password);
-            PreparedStatement pst = conn.prepareStatement("UPDATE item SET stock=stock+1 WHERE item_name=?");
-            pst.setString(1,itemName);
+            PreparedStatement pst = conn.prepareStatement("UPDATE item SET stock=stock+1 WHERE item_ID=?");
+            pst.setInt(1,itemID);
+            if(pst.executeUpdate()==0){
+                return false;
+            }
+        }
+        catch(ClassNotFoundException | SQLException e){
+            System.out.print("exception: "+e);
+            return false;
+        }
+        return true;
+    }
+    
+    public boolean editStock(int itemID, int stock){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(url,username,password);
+            PreparedStatement pst = conn.prepareStatement("UPDATE item SET stock=? WHERE item_ID=?");
+            pst.setInt(1,stock);
+            pst.setInt(2,itemID);
             if(pst.executeUpdate()==0){
                 return false;
             }

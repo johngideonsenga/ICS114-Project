@@ -5,7 +5,6 @@
  */
 package com.logic.servlet;
 
-import com.logic.service.Borrower;
 import com.logic.service.Item;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,16 +12,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 
 /**
  *
  * @author Jonjie
  */
-public class returnItemServlet extends HttpServlet {
+public class editItemServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,13 +33,12 @@ public class returnItemServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            int borrowerID = Integer.parseInt(request.getParameter("borrowerID"));
             int itemID = Integer.parseInt(request.getParameter("itemID"));
+            int stock = Integer.parseInt(request.getParameter("stock"));
             
             Item item = new Item();
-            Borrower borrower = new Borrower();
-            if(borrower.Return(borrowerID) && item.incrementStock(itemID)){
-                response.sendRedirect("admin/borrowers.jsp");
+            if(item.editStock(itemID, stock)){
+                response.sendRedirect("admin/home.jsp?editSuccess=1");
             }
         }
     }
@@ -87,5 +81,5 @@ public class returnItemServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-    
+
 }
