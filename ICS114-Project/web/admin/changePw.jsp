@@ -1,5 +1,21 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+    //disable caching
+    response.setContentType("text/html");
+    response.setHeader("Cache-Control","no-cache");
+    response.setHeader("Cache-Control","no-store");
+    response.setDateHeader("Expires", 0);
+    response.setHeader("Pragma","no-cache"); 
+    
+    //establish session
+    session = request.getSession(false);
+    
+    //check if session is empty
+    if(session.getAttribute("user") == null){
+        response.sendRedirect("login.jsp");
+    }
+%>
 <html>
     <head>
         <title>IICS Borrowing System | Change Password</title>

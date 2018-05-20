@@ -3,6 +3,16 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <% 
+    //disable caching
+    response.setContentType("text/html");
+    response.setHeader("Cache-Control","no-cache");
+    response.setHeader("Cache-Control","no-store");
+    response.setDateHeader("Expires", 0);
+    response.setHeader("Pragma","no-cache"); 
+    
+    //destroy session
+    session.invalidate();
+    
     Item item = new Item();
     ResultSet rs = item.getItems();
 %>

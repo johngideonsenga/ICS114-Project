@@ -15,6 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -42,6 +43,11 @@ public class loginServlet extends HttpServlet {
             Connection conn = new Connection();
             
             if(conn.Connection(username, password)){
+                //establish session
+                HttpSession session = request.getSession(true);
+                //save model to session
+                session.setAttribute("user", conn);
+                //redirect to home.jsp
                 response.sendRedirect("admin/home.jsp");
             }else{
                 response.sendRedirect("admin/login.jsp?failed=1");
