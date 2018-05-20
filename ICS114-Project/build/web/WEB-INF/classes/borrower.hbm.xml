@@ -5,7 +5,8 @@
     <id column="borrower_ID" name="borrowerID">
         <generator class="increment"/>
     </id>
-    <property column="item" name="item"/>
+    <property column="item_ID" name="itemID"/>
+    <property column="item_name" name="itemName"/>
     <property column="student_num" name="studentNum"/>
     <property column="last_name" name="lastName"/>
     <property column="first_name" name="firstName"/>

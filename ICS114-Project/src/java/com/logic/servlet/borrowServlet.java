@@ -52,7 +52,8 @@ public class borrowServlet extends HttpServlet {
             String subject = request.getParameter("subject");
             
             Borrower borrower = new Borrower();
-            borrower.setItem(itemName);
+            borrower.setItemID(itemID);
+            borrower.setItemName(itemName);
             borrower.setStudentNum(studentNum);
             borrower.setLastName(lastName);
             borrower.setFirstName(firstName);

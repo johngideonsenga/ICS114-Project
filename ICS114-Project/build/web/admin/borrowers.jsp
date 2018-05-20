@@ -59,7 +59,7 @@
                 <tbody>
                     <% while(rs!=null && rs.next()){ %>
                     <tr>
-                        <td><%=rs.getString("item")%></td>
+                        <td><%=rs.getString("item_name")%></td>
                         <td><%=rs.getString("student_num")%></td>
                         <td><%=rs.getString("last_name")%></td>
                         <td><%=rs.getString("first_name")%></td>
@@ -71,7 +71,7 @@
                         <td><%=rs.getString("status")%></td>
                         <% if(rs.getString("status").equals("Borrowed")){ %>
                         <td><button type="button" 
-                                onclick="setReturn('<%=rs.getString("borrower_ID")%>','<%=rs.getString("item")%>')" 
+                                onclick="setReturn('<%=rs.getString("borrower_ID")%>','<%=rs.getString("item_name")%>')" 
                                 data-toggle="modal" data-target="#returnPrompt">Return</button>
                         </td>
                         <% }else{ %>

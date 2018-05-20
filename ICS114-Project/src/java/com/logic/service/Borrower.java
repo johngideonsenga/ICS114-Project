@@ -25,7 +25,8 @@ public class Borrower {
     private String password = "root";
     
     private int borrowerID;
-    private String item;
+    private int itemID;
+    private String itemName;
     private String studentNum;
     private String lastName;
     private String firstName;
@@ -35,6 +36,20 @@ public class Borrower {
     private String timeBorrowed;
     private String timeReturned = "";
     private String status = "Borrowed";
+    
+    public ResultSet getBorrowers(){
+        ResultSet rs = null;
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(url,username,password);
+            Statement st = conn.createStatement();
+            rs = st.executeQuery("SELECT * FROM borrower");
+        }
+        catch(ClassNotFoundException | SQLException e){
+            System.out.print("exception: "+e);
+        }
+        return rs;
+    }
 
     public int getBorrowerID() {
         return borrowerID;
@@ -44,12 +59,20 @@ public class Borrower {
         this.borrowerID = borrowerID;
     }
 
-    public String getItem() {
-        return item;
+    public int getItemID() {
+        return itemID;
     }
 
-    public void setItem(String item) {
-        this.item = item;
+    public void setItemID(int itemID) {
+        this.itemID = itemID;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
 
     public String getStudentNum() {
@@ -123,19 +146,20 @@ public class Borrower {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    public ResultSet getBorrowers(){
-        ResultSet rs = null;
+    
+    public boolean deleteBorrowers(int itemID){
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url,username,password);
-            Statement st = conn.createStatement();
-            rs = st.executeQuery("SELECT * FROM borrower");
+            PreparedStatement pst = conn.prepareStatement("DELETE FROM borrower WHERE item_ID = ?");
+            pst.setInt(1,itemID);
+            pst.executeUpdate();
         }
         catch(ClassNotFoundException | SQLException e){
             System.out.print("exception: "+e);
+            return false;
         }
-        return rs;
+        return true;
     }
     
     public boolean Return(int borrowerID){
@@ -161,7 +185,7 @@ public class Borrower {
 
     @Override
     public String toString() {
-        return "Borrower{" + "borrowerID=" + borrowerID + ", item=" + item + ", studentNum=" + studentNum + ", lastName=" + lastName + ", firstName=" + firstName + ", section=" + section + ", room=" + room + ", subject=" + subject + ", timeBorrowed=" + timeBorrowed + ", timeReturned=" + timeReturned + ", status=" + status + '}';
+        return "Borrower{" + "borrowerID=" + borrowerID + ", itemID=" + itemID + ", itemName=" + itemName + ", studentNum=" + studentNum + ", lastName=" + lastName + ", firstName=" + firstName + ", section=" + section + ", room=" + room + ", subject=" + subject + ", timeBorrowed=" + timeBorrowed + ", timeReturned=" + timeReturned + ", status=" + status + '}';
     }
 
 }

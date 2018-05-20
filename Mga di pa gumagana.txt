@@ -1,6 +1,5 @@
 Mga Di pa gumagana:
 Edit Stock
-Return (update status ng borrower)
 Change Password
 
 sql injection and XSS

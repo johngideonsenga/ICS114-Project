@@ -5,6 +5,7 @@
  */
 package com.logic.servlet;
 
+import com.logic.service.Borrower;
 import com.logic.service.Item;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -35,7 +36,8 @@ public class deleteServlet extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             int itemID = Integer.parseInt(request.getParameter("itemID"));
             Item item = new Item();
-            if(item.deleteItem(itemID)){
+            Borrower borrow = new Borrower();
+            if(item.deleteItem(itemID) && borrow.deleteBorrowers(itemID)){
                 response.sendRedirect("admin/home.jsp");
             }
         }
