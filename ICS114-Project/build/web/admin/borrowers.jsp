@@ -24,6 +24,11 @@
                 });
             });
             
+            function setReturn(borrowerID,itemName){
+                document.getElementById("borrowerID").value = borrowerID;
+                document.getElementById("itemName").value = itemName;
+            }
+            
             <% if(request.getParameter("success")!=null){ %>
                 $(window).on('load',function(){
                     $('#success').modal('show');
@@ -64,7 +69,14 @@
                         <td><%=rs.getString("time_borrowed")%></td>
                         <td><%=rs.getString("time_returned")%></td>
                         <td><%=rs.getString("status")%></td>
-                        <td><button type="button" data-toggle="modal" data-target="#returnPrompt">Return</button></td>
+                        <% if(rs.getString("status").equals("Borrowed")){ %>
+                        <td><button type="button" 
+                                onclick="setReturn('<%=rs.getString("borrower_ID")%>','<%=rs.getString("item")%>')" 
+                                data-toggle="modal" data-target="#returnPrompt">Return</button>
+                        </td>
+                        <% }else{ %>
+                        <td></td>
+                        <% } %>
                     </tr>
                     <% } %>
                 </tbody>

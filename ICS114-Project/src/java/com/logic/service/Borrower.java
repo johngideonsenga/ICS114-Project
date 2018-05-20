@@ -7,15 +7,23 @@ package com.logic.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
  * @author Jonjie
  */
 public class Borrower {
+    
+    private String url = "jdbc:mysql://localhost:3306/borrowing_system";
+    private String username = "root";
+    private String password = "root";
+    
     private int borrowerID;
     private String item;
     private String studentNum;
@@ -26,7 +34,7 @@ public class Borrower {
     private String subject;
     private String timeBorrowed;
     private String timeReturned = "";
-    private String status = "borrowed";
+    private String status = "Borrowed";
 
     public int getBorrowerID() {
         return borrowerID;
@@ -117,9 +125,6 @@ public class Borrower {
     }
 
     public ResultSet getBorrowers(){
-        String url = "jdbc:mysql://localhost:3306/borrowing_system";
-        String username = "root";
-        String password = "root";
         ResultSet rs = null;
         try{
             Class.forName("com.mysql.jdbc.Driver");
@@ -131,6 +136,27 @@ public class Borrower {
             System.out.print("exception: "+e);
         }
         return rs;
+    }
+    
+    public boolean Return(int borrowerID){
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH-mm");
+        Date date = new Date();
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(url,username,password);
+            PreparedStatement pst = conn.prepareStatement("UPDATE borrower SET time_returned=?, status=? WHERE borrower_ID=?");
+            pst.setString(1,formatter.format(date));
+            pst.setString(2,"Returned");
+            pst.setInt(3,borrowerID);
+            if(pst.executeUpdate()==0){
+                return false;
+            }
+        }
+        catch(ClassNotFoundException | SQLException e){
+            System.out.print("exception: "+e);
+            return false;
+        }
+        return true;
     }
 
     @Override

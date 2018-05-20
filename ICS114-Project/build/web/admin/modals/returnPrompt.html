@@ -8,7 +8,9 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
             </div>
-            <form method="POST" action="">
+            <form method="POST" action="../returnItemServlet">
+                <input type="hidden" id="borrowerID" name="borrowerID" value="">
+                <input type="hidden" id="itemName" name="itemName" value="">
                 <div class="modal-body">
                     Are you sure you want to return this item?
                 </div>

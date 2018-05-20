@@ -1,8 +1,7 @@
 Mga Di pa gumagana:
 Edit Stock
-Return
+Return (update status ng borrower)
 Change Password
-Borrow *(update ng stock at status ng borrower)
 
 sql injection and XSS
 url redirect

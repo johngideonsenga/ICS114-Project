@@ -86,7 +86,24 @@ public class Item {
         }
         return true;
     }
-
+    
+    public boolean incrementStock(String itemName){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(url,username,password);
+            PreparedStatement pst = conn.prepareStatement("UPDATE item SET stock=stock+1 WHERE item_name=?");
+            pst.setString(1,itemName);
+            if(pst.executeUpdate()==0){
+                return false;
+            }
+        }
+        catch(ClassNotFoundException | SQLException e){
+            System.out.print("exception: "+e);
+            return false;
+        }
+        return true;
+    }
+    
     @Override
     public String toString() {
         return "Item{" + "itemID=" + itemID + ", itemName=" + itemName + ", stock=" + stock + '}';

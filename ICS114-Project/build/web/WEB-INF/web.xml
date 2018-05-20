@@ -20,6 +20,10 @@
         <servlet-name>loginServlet</servlet-name>
         <servlet-class>com.logic.servlet.loginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>returnItemServlet</servlet-name>
+        <servlet-class>com.logic.servlet.returnItemServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>addItemServlet</servlet-name>
         <url-pattern>/addItemServlet</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>returnItemServlet</servlet-name>
+        <url-pattern>/returnItemServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
