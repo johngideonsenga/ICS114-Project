@@ -69,6 +69,23 @@ public class Item {
         }
         return true;
     }
+    
+    public boolean decrementStock(int itemID){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(url,username,password);
+            PreparedStatement pst = conn.prepareStatement("UPDATE item SET stock = stock-1 WHERE item_ID=? AND stock>0;");
+            pst.setInt(1,itemID);
+            if(pst.executeUpdate()==0){
+                return false;
+            }
+        }
+        catch(ClassNotFoundException | SQLException e){
+            System.out.print("exception: "+e);
+            return false;
+        }
+        return true;
+    }
 
     @Override
     public String toString() {

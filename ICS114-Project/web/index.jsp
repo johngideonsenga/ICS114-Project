@@ -25,8 +25,9 @@
                 });
             });
             
-            function setItem(item){
-                document.getElementById("item").value = item;
+            function setItem(itemID, itemName){
+                document.getElementById("itemID").value = itemID;
+                document.getElementById("itemName").value = itemName;
             }
             
             <% if(request.getParameter("success")!=null){ %>
@@ -57,7 +58,10 @@
                     <tr>
                         <td><%=rs.getString("item_name")%></td>
                         <td><%=rs.getInt("stock")%></td>
-                        <td><button type="button" onClick="setItem('<%=rs.getString("item_name")%>')" data-toggle="modal" data-target="#borrowForm">Borrow</button></td>
+                        <td><button type="button" 
+                            onClick="setItem('<%=rs.getString("item_ID")%>','<%=rs.getString("item_name")%>')"
+                            data-toggle="modal" data-target="#borrowForm">Borrow</button>
+                        </td>
                     </tr>
                     <% }%>
                 </tbody>
@@ -66,5 +70,6 @@
         <!--Modals-->
         <%@include file='modals/borrowForm.html'%>
         <%@include file='modals/borrowSuccess.html'%>
+        <%@include file='modals/borrowFailed.html'%>
     </body>
 </html>

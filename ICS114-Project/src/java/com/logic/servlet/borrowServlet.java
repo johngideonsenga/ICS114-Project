@@ -42,7 +42,8 @@ public class borrowServlet extends HttpServlet {
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH-mm");
             Date date = new Date();  
             
-            String item = request.getParameter("item");
+            int itemID = Integer.parseInt(request.getParameter("itemID"));
+            String itemName = request.getParameter("itemName");
             String studentNum = request.getParameter("studentNum");
             String lastName = request.getParameter("lastName");
             String firstName = request.getParameter("firstName");
@@ -51,7 +52,7 @@ public class borrowServlet extends HttpServlet {
             String subject = request.getParameter("subject");
             
             Borrower borrower = new Borrower();
-            borrower.setItem(item);
+            borrower.setItem(itemName);
             borrower.setStudentNum(studentNum);
             borrower.setLastName(lastName);
             borrower.setFirstName(firstName);
@@ -60,7 +61,7 @@ public class borrowServlet extends HttpServlet {
             borrower.setSubject(subject);
             borrower.setTimeBorrowed(formatter.format(date));
 
-            if(addBorrower(borrower)){
+            if(addBorrower(borrower, itemID)){
                 response.sendRedirect("index.jsp?success=1");
             }
         }
@@ -104,26 +105,30 @@ public class borrowServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-    boolean addBorrower(Borrower borrower){
+    boolean addBorrower(Borrower borrower, int itemID){
+        Item item = new Item();
         Configuration config = null;
         SessionFactory factory = null;
         Session session = null;
         Transaction transaction = null;
         
-        try{
-            config = new Configuration();
-            config.configure();
-            factory = config.buildSessionFactory();
-            session = factory.openSession();
-            transaction = session.beginTransaction();            
-            session.save(borrower); // insert
-            transaction.commit();
-            session.close();
+        if(item.decrementStock(itemID)){
+            try{
+                config = new Configuration();
+                config.configure();
+                factory = config.buildSessionFactory();
+                session = factory.openSession();
+                transaction = session.beginTransaction();
+                session.save(borrower); // insert
+                transaction.commit();
+                session.close();
+                return true;
+            }
+            catch(Exception e){
+                System.out.println("Exception: "+e);
+                return false;
+            }
         }
-        catch(Exception e){
-            System.out.println("Exception: "+e);
-            return false;
-        }
-        return true;
+        return false;
     }
 }
