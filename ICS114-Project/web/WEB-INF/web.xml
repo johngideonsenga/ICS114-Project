@@ -28,6 +28,10 @@
         <servlet-name>editItemServlet</servlet-name>
         <servlet-class>com.logic.servlet.editItemServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>changePwServlet</servlet-name>
+        <servlet-class>com.logic.servlet.changePwServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>addItemServlet</servlet-name>
         <url-pattern>/addItemServlet</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>editItemServlet</servlet-name>
         <url-pattern>/editItemServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>changePwServlet</servlet-name>
+        <url-pattern>/changePwServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
