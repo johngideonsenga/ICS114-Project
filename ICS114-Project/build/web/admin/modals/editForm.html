@@ -1,32 +1,33 @@
 <!--Modal-->
+<center>
 <div class="modal fade" id="editForm" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" >Edit Item Stock</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Edit Item Stock</h5>
             </div>
-            <form method="POST" action="../editItemServlet">
-                <input type='hidden' id='edit' name='itemID' value=""/>
-                <div class="modal-body">
-                    <table>
-                        <tr>
-                            <td>Item:</td>
-                            <td><input type="text" id='itemName' disabled required></td>
-                        </tr>
-                        <tr>
-                            <td>Stock:</td>
-                            <td><input type="number" id='stock' name="stock" min='1' value="" required></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
+                <form method="POST" action="../editItemServlet">
+                    <input type='hidden' id='edit' name='itemID' value=""/>
+                    <div class="modal-body">
+                        <table class="modal-style">
+                            <tr>
+                                <td class="modal-td">Item</td>
+                                <td><input type="text" id='itemName' disabled required></td>
+                            </tr>
+                            <tr>
+                                <td class="modal-td">Stock</td>
+                                <td><input type="number" id='stock' name="stock" min='1' value="" required></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
         </div>
     </div>
 </div>
+</center>

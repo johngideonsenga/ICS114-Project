@@ -22,6 +22,7 @@
         <script type="text/javascript" src="../jquery/jquery.js"></script>
         <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
         <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css.css" />
         <script type="text/javascript">
             function isMatch(){
                 newPw = document.getElementById('newPw').value;
@@ -61,28 +62,30 @@
             <% } %>
         </script>
     </head>
-    <body>
+    <body class="body3">
+        
         <%@include file='templates/header.html'%>
-        <center><br><br>
-            <form action="../changePwServlet" method="POST">
+        <center>
+            <img src="../Pics/header.png" style="height: 200px;"/>
+            <div class="likod">
+            <form class="con3"action="../changePwServlet" method="POST">
                 <input type='hidden' name='user' value='<%=session.getAttribute("user")%>' >
-                <table>
-                    <tr>
-                        <td>Current Password:</td>
-                        <td><input type="password" name="currentPw" required/></td>
-                    </tr>
-                    <tr>
-                        <td>New Password:</td>
-                        <td><input type="password" onkeyup="isMatch();" name="newPw" id="newPw" required/></td>
-                    </tr>
-                    <tr>
-                        <td>Confirm Password:</td>
-                        <td><input type="password" onkeyup="isMatch();" id="confirmPw" required/></td>
-                    </tr>
-                </table><br>
-                <input type="submit" name="submit" value="Submit" id="submit" disabled/>
-            </form><br>
-            <p id="msg"></p>
+                
+                Current Password:<br>
+                        <input class="textbox" type="password" name="currentPw" required/>
+                        <br>
+                        New Password:<br>
+                        <input class="textbox" type="password" onkeyup="isMatch();" name="newPw" id="newPw" required/>
+                        <br>
+                        Confirm Password:<br>
+                        <input class="textbox" type="password" onkeyup="isMatch();" id="confirmPw" required/>
+                    
+                     <p id="msg"></p>
+                
+                <center><input type="submit" name="submit" value="Submit" id="submit" disabled/></center>
+            </form>
+            </div></center><br>
+         <!--   <p id="msg"></p>
         </center>
     </body>
     <%@include file='modals/changePwIncorrect.html'%>

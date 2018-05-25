@@ -30,6 +30,7 @@
         <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
         <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
         <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css.css"/>
         <script type="text/javascript">
             $(document).ready( function (){
                 $('#table').DataTable({
@@ -68,38 +69,42 @@
             <% } %>  
         </script>
     </head>
-    <body>
+    <body class="body3">
         <!--Header -->
         <%@include file='templates/header.html'%>
-        <br/>
-        <div>
-            <center>
-                <button type="button" data-toggle="modal" data-target="#addForm">Add New Item</button>
-            </center>
-            <table id="table">
+    <center>
+      
+      <img src="../Pics/header.png" style="height: 200px;"/>
+        <div class="table2 transparent">
+            <br/>
+            <table  id="table">
                 <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Stock</th>
-                        <th></th>
-                        <th></th>
+                    <tr class="th2">
+                        <th style="border-top: 2px solid #f4484b; border-bottom: 2px solid #f4484b;">Item</th>
+                        <th style="border-top: 2px solid #f4484b; border-bottom: 2px solid #f4484b;">Stock</th>
+                        <th style="border-top: 2px solid #f4484b; border-bottom: 2px solid #f4484b;"></th>
+                        <th style="border-top: 2px solid #f4484b; border-bottom: 2px solid #f4484b;"></th>
                     </tr>
                 </thead>
                 <tbody>
                     <% while(rs!=null && rs.next()){%>
                     <tr>
-                        <td><%=rs.getString("item_name")%></td>
-                        <td><%=rs.getInt("stock")%></td>
-                        <td><button type="button" 
+                        <td class="td1"><%=rs.getString("item_name")%></td>
+                        <td class="td1"><%=rs.getInt("stock")%></td>
+                        <td class="td1"><button type="button" 
                                     onClick="setEdit('<%=rs.getString("item_ID")%>','<%=rs.getString("item_name")%>','<%=rs.getString("stock")%>')" 
                                     data-toggle="modal" data-target="#editForm">Edit Stock</button></td>
-                        <td><button type="button" onClick="setDelete('<%=rs.getString("item_ID")%>')" data-toggle="modal" data-target="#deletePrompt">Delete Item</button></td>
+                        <td class="td1"><button class="deletebutton" type="button" onClick="setDelete('<%=rs.getString("item_ID")%>')" data-toggle="modal" data-target="#deletePrompt">Delete Item</button></td>
                     </tr>
                     <% }%>
                 </tbody>
             </table>
+                 <center>
+                <button type="button" data-toggle="modal" data-target="#addForm">Add New Item</button>
+                <br/><br/><br/><br/><br/>
+            </center>
         </div>
-
+    </center>
         <!--Modals-->
         <%@include file='modals/editForm.html'%>
         <%@include file='modals/deletePrompt.html'%>

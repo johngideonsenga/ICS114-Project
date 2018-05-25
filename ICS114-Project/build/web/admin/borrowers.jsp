@@ -29,6 +29,8 @@
         <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
         <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
         <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css.css" />
+        
         <script type="text/javascript">
             $(document).ready( function (){
                 $('#table').DataTable({
@@ -51,41 +53,42 @@
             <% } %>
         </script>
     </head>
-    <body>
+    <body class="body3">
         <%@include file='templates/header.html'%>
-        <br/>
-        <div>
+    <center>
+        <img src="../Pics/header.png" style="height: 200px;"/>
+        <div class="table3 transparent" style="width:80%;">
             <table id="table">
                 <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Student Number</th>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Section</th>
-                        <th>Room</th>
-                        <th>Subject</th>
-                        <th>Time Borrowed</th>
-                        <th>Time Returned</th>
-                        <th>Subject</th>
-                        <th></th>
+                    <tr class="th3">
+                        <th style="border-top: 2px solid #f4484b; border-bottom: 2px solid #f4484b;">Item</th>
+                        <th style="border-top: 2px solid #f4484b; border-bottom: 2px solid #f4484b;">Student Number</th>
+                        <th style="border-top: 2px solid #f4484b; border-bottom: 2px solid #f4484b;">Last Name</th>
+                        <th style="border-top: 2px solid #f4484b; border-bottom: 2px solid #f4484b;">First Name</th>
+                        <th style="border-top: 2px solid #f4484b; border-bottom: 2px solid #f4484b;">Section</th>
+                        <th style="border-top: 2px solid #f4484b; border-bottom: 2px solid #f4484b;">Room</th>
+                        <th style="border-top: 2px solid #f4484b; border-bottom: 2px solid #f4484b;">Subject</th>
+                        <th style="border-top: 2px solid #f4484b; border-bottom: 2px solid #f4484b;">Time Borrowed</th>
+                        <th style="border-top: 2px solid #f4484b; border-bottom: 2px solid #f4484b;">Time Returned</th>
+                        <th style="border-top: 2px solid #f4484b; border-bottom: 2px solid #f4484b;">Status</th>
+                        <th style="border-top: 2px solid #f4484b; border-bottom: 2px solid #f4484b;"></th>
                     </tr>
                 </thead>
                 <tbody>
                     <% while(rs!=null && rs.next()){ %>
                     <tr>
-                        <td><%=rs.getString("item_name")%></td>
-                        <td><%=rs.getString("student_num")%></td>
-                        <td><%=rs.getString("last_name")%></td>
-                        <td><%=rs.getString("first_name")%></td>
-                        <td><%=rs.getString("section")%></td>
-                        <td><%=rs.getString("room")%></td>
-                        <td><%=rs.getString("subject")%></td>
-                        <td><%=rs.getString("time_borrowed")%></td>
-                        <td><%=rs.getString("time_returned")%></td>
-                        <td><%=rs.getString("status")%></td>
+                        <td class="td3"><%=rs.getString("item_name")%></td>
+                        <td class="td3"><%=rs.getString("student_num")%></td>
+                        <td class="td3"><%=rs.getString("last_name")%></td>
+                        <td class="td3"><%=rs.getString("first_name")%></td>
+                        <td class="td3"><%=rs.getString("section")%></td>
+                        <td class="td3"><%=rs.getString("room")%></td>
+                        <td class="td3"><%=rs.getString("subject")%></td>
+                        <td class="td3"><%=rs.getString("time_borrowed")%></td>
+                        <td class="td3"><%=rs.getString("time_returned")%></td>
+                        <td class="td3"><%=rs.getString("status")%></td>
                         <% if(rs.getString("status").equals("Borrowed")){ %>
-                        <td><button type="button" 
+                        <td class="td3"><button type="button" 
                                 onclick="setReturn('<%=rs.getString("borrower_ID")%>','<%=rs.getString("item_ID")%>')" 
                                 data-toggle="modal" data-target="#returnPrompt">Return</button>
                         </td>
@@ -96,12 +99,13 @@
                     <% } %>
                 </tbody>
             </table>
-        </div>
-        <div>
             <form action="../generatePDFServlet" method="POST">
-                <input type="submit" value="Generate a PDF List" />
+                <center><input type="submit" value="Generate a PDF List" /></center>
             </form>
         </div>
+                
+    </center>
+           
         <!--Modals-->
         <%@include file='modals/returnPrompt.html'%>
         <%@include file='modals/generateSuccess.html'%>

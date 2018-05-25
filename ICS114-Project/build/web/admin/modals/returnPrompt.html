@@ -1,12 +1,14 @@
 <!--Modal-->
+<center>
 <div class="modal fade" id="returnPrompt" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" >Return Item</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
+                <h5 class="modal-title" >Return Item</h5>
+                    
             </div>
             <form method="POST" action="../returnItemServlet">
                 <input type="hidden" id="borrowerID" name="borrowerID" value="">
@@ -15,10 +17,11 @@
                     Are you sure you want to return this item?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
                     <button type="submit" class="btn btn-primary">Yes</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+    </center>

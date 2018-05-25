@@ -18,6 +18,7 @@
         <script type="text/javascript" src="../jquery/jquery.js"></script>
         <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
         <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css.css"/>
         <script type="text/javascript">
             <% if(request.getParameter("failed")!=null){ %>
                 $(window).on('load',function(){
@@ -26,23 +27,25 @@
             <% } %>  
         </script>
     </head>
-    <body>
-        <input type="button" onClick='location.href="../index.jsp"' value="Home"/>
+    <body class="body2">
+        
         <center>
-            <form action="../loginServlet" method="POST">
-                <h1>IICS Borrowing System</h1>
-                <h4>Administrator Account</h4>
-                <br><br>
+            <br><br><br><br><br><br>
+            <button type="button" style="background-color: transparent; border: none;" onClick='location.href="../index.jsp"'/><img src="../Pics/adminlog.png" style="height: 250px;"/></button>
+            <form class="formloc" action="../loginServlet" method="POST">
+                <center>      
+                <br><br><br>
                 <table align="center">
                     <tr>
-                        <td>Username:</td>
+                        <td class="modal-td">Username</td>
                          <td><input type="text" name="username" /></td>
                     </tr>
                      <tr>
-                        <td>Password:</td>
+                        <td class="modal-td">Password</td>
                         <td><input type="password" name="password"/></td>
                     </tr>
-                </table><br>
+                </table>
+                </center><br>
                 <input type="submit" name="submit" value="Submit"/>
             </form>
         </center>

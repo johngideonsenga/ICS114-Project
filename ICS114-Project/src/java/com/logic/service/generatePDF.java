@@ -25,7 +25,7 @@ public class generatePDF {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH-mm");  
         Date date = new Date(); 
         
-        String filename = "D:\\Project\\Borrowers - "+formatter.format(date)+".pdf";
+        String filename = "/Users/almikkajimenez/Desktop/pdf/Borrowers - "+formatter.format(date)+".pdf";
         Borrower borrower = new Borrower();
         ResultSet rs = borrower.getBorrowers();
         
@@ -35,7 +35,7 @@ public class generatePDF {
             document.open();
 
             while(rs.next()){
-                Paragraph paragraph = new Paragraph(rs.getString("student_num")+" - "+rs.getString("last_name")+", "+rs.getString("first_name")+" - "+rs.getString("section")+" - "+rs.getString("room")+" - "+rs.getString("subject")+" - "+rs.getString("item")+" - "+rs.getString("time_Borrowed"));
+                Paragraph paragraph = new Paragraph(rs.getString("student_num")+" - "+rs.getString("last_name")+", "+rs.getString("first_name")+" - "+rs.getString("section")+" - "+rs.getString("room")+" - "+rs.getString("subject")+" - "+rs.getString("item_name")+" - "+rs.getString("time_Borrowed"));
                 document.add(paragraph);
             }
             document.close();
